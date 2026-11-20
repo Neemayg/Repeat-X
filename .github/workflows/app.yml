@@ -32,6 +32,7 @@ jobs:
         run: |
           if [ ! -d android ]; then
             flutter create . --project-name repeatx --org com.neemaygupta --platforms android,ios
+            rm -f test/widget_test.dart   # template test targets a counter app we don't have
           fi
 
       - run: flutter pub get
