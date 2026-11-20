@@ -1,58 +1,44 @@
-# Repeat
+# RepeatX
 
-An iPhone app that reads your previous-year question papers and tells you what is
-actually likely to come up — then builds a practice paper in your exam's format.
+Add a subject, drop in everything your teacher gave you — syllabus, past MST and
+End Sem papers, question banks, notes — and RepeatX tells you, unit by unit, what
+has been asked, how often, for how many marks, and where the answer is in your
+notes. Then it builds mock MST-1, MST-2 and End Sem papers from that evidence.
 
-## What it does
-
-1. **Ingest** — reads question papers, including PDFs that are just photographs of
-   the printed paper, using on-device OCR.
-2. **Analyse** — maps every question onto a syllabus topic, then merges the ones
-   that are the same question reworded. "Explain the working of DNS with a neat
-   diagram" and "Describe how DNS resolves a domain name" become one question
-   asked twice.
-3. **Rank** — repeats count, recent years count more, assignments count less.
-4. **Generate** — fills a configurable exam pattern with the highest-ranked
-   questions, respecting unit coverage and mark weights.
-
-## No API keys, no cost, nothing generative
-
-Question matching is deterministic arithmetic over your own papers: IDF-weighted
-term vectors with bigrams and an acronym boost, anchored on the syllabus topic
-list so questions on different listed topics never merge. OCR transcribes what is
-on the page. Nothing invents a question that was never asked.
-
-Apple's `NLEmbedding` sentence vectors were measured against real exam text and
-rejected — they scored two unrelated questions as more similar than two identical
-ones.
+Free for students. iOS and Android from one Flutter codebase. Each student uses
+their own free Gemini key; everything else stays on the phone.
 
 ## Layout
 
 | Path | What it is |
 | --- | --- |
-| `RepeatKit/` | The engine, as a Swift package. Models, clustering, topic mapping, paper generation, OCR ingestion. |
-| `RepeatApp/` | The SwiftUI iOS app. |
-| `design/` | UI mockups. |
+| `app/` | v2 — the Flutter app (in progress) |
+| `eval/` | Hand-labelled real papers used to measure accuracy (`cao_ground_truth.json`: 5 CAO papers, 78 questions, repeat groups) |
+| `legacy/` | v0 — the original SwiftUI app and Swift analysis engine (`RepeatKit`) |
+| `.github/workflows/app.yml` | Free CI: analyse, test, build an Android APK on every push |
 
-## Running the engine's checks
+## Running v2
 
 ```bash
-swift run RepeatDemo   # 29 assertions over the analysis pipeline, prints a generated paper
-swift run IngestDemo   # OCR end to end on a synthesised image-only PDF
+cd app
+flutter create . --project-name repeatx --org com.neemaygupta --platforms android,ios   # first time only
+flutter pub get
+flutter test        # format rules + generator checked against real CAO papers
+flutter run
 ```
 
-Both run from `RepeatKit/` and need no simulator.
+## Exam formats (SRM Delhi-NCR, current)
 
-## Exam patterns
+- **MST-1** (Units 1–2) and **MST-2** (Units 3–4) — 90 min, 30 marks: Part A 5 × 2, Part B any 4 of 5 × 5
+- **End Sem** (Units 1–5) — 3 hours, 100 marks: Part A 10 × 2, Part B Q11–Q15 one per unit, (a) OR (b), 16 marks each
 
-Patterns are data, not code — every count, mark value and choice rule is editable
-in the app.
+Formats are data; older papers keep the format printed on them.
 
-- **End Sem** — 3 hours, 100 marks: Part A 10 x 2, Part B 5 x 16 with (a)/(b) internal choice
-- **MST-1 / MST-2** — 90 minutes, 30 marks: Part A 5 x 2, Part B any 4 of 5 x 5
+## Status
 
-## Not built yet
-
-Document-picker import UI, the review-extraction screen, PDF export, and
-persistence. The OCR pipeline behind import is written and tested; it just has no
-screen in front of it.
+- [x] Product spec, UI design, real-data audit, ground-truth set
+- [x] Flutter foundation: theme, Gemini key onboarding (BYOK), subjects, local DB, exam formats, evidence-based paper generator with tests
+- [ ] Phase 2: import files, Gemini extraction, review screen
+- [ ] Phase 3: unit/topic analysis screens
+- [ ] Phase 4: link questions to notes
+- [ ] Phase 5: mock paper screen + PDF export

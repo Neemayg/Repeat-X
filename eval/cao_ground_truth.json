@@ -1,0 +1,159 @@
+{
+  "schema": "repeatx-groundtruth/v1",
+  "subject": {
+    "name": "Computer Architecture & Organization",
+    "codes": ["23CSPE2007", "21CS2007", "CS2007"],
+    "college": "SRM University Delhi-NCR, Sonepat",
+    "labelled_by": "Claude, from Neemay's Semester-3 folder, 2026-11-20 (to be checked by Neemay)"
+  },
+  "syllabus": [
+    {"unit": 1, "title": "Introduction", "topics": ["Evolution of computer systems", "Computer types", "Functional units", "Basic operational concepts", "Bus structures", "Location and addresses", "Memory operations", "Addressing modes", "Design of a computer system", "Memory instruction and instruction sequencing", "RISC versus CISC"]},
+    {"unit": 2, "title": "Central Processing Unit", "topics": ["Arithmetic logic unit", "Fixed point arithmetic", "Floating point arithmetic", "Execution of complete instruction", "Basic concepts of pipelining"]},
+    {"unit": 3, "title": "Control Unit Design", "topics": ["Control transfer", "Fetch cycle", "Instruction interpretation and execution", "Hardwired control", "Micro-programmed control"]},
+    {"unit": 4, "title": "Memories and Subsystems", "topics": ["Semiconductor memory (static and dynamic)", "Associative memory", "Cache memory mapping methods", "Organization of a cache memory unit", "Fetch and write mechanisms", "Virtual memory", "Secondary memories (optical, magnetic tape, magnetic disks, controllers)"]},
+    {"unit": 5, "title": "I/O Processing", "topics": ["Data transfer techniques", "Bus interface", "I/O channel", "I/O processor", "I/O devices", "Direct memory access"]}
+  ],
+  "files": [
+    {"file": "CAO/Paper/CAO endsem pyq 21.pdf", "paper": "ES-2023-11", "note": "filename says 21; header says November 2023"},
+    {"file": "CAO/Paper/CAO endsem pyq 23.pdf", "paper": "ES-2024-11", "note": "filename says 23; header says November 2024"},
+    {"file": "CAO/Paper/CAO MST-1 pyq 22.pdf", "paper": "MST1-2023-10-OLD", "note": "header: MST 1 (October 2023), 21CS2007, 4th semester (old scheme)"},
+    {"file": "CAO/Paper/cao one mst.pdf", "paper": "MST1-2023-10-OLD", "duplicate_of": "CAO/Paper/CAO MST-1 pyq 22.pdf"},
+    {"file": "CAO/Paper/CAO MST-1 pyq 23.pdf", "paper": "MST1-NEW", "note": "23CSPE2007, 3rd semester; year not printed"},
+    {"file": "CAO/Paper/CAO Mst-1.pdf", "paper": "MST1-NEW", "duplicate_of": "CAO/Paper/CAO MST-1 pyq 23.pdf", "note": "different photo of the same paper"},
+    {"file": "CAO/Paper/CAO MST-2 pyq 23.pdf", "paper": "MST2-NEW", "note": "Internal Assessment Test-II, 23CSPE2007; year not printed"}
+  ],
+  "papers": [
+    {
+      "id": "ES-2023-11", "exam": "END_SEM", "year": 2023, "month": 11, "code": "21CS2007", "duration_min": 180, "max_marks": 100,
+      "format": {"sections": [{"name": "A", "count": 10, "marks": 2, "choice": "none"}, {"name": "B", "count": 5, "marks": 16, "choice": "internal_or"}]},
+      "questions": [
+        {"n": "1", "m": 2, "u": 1, "topic": "Functional units", "type": "theory", "text": "Write the basic functional units of computer.", "g": "functional_units"},
+        {"n": "2", "m": 2, "u": 1, "topic": "Bus structures", "type": "theory", "text": "What is a bus? What are the different buses in a CPU?", "g": "bus_types"},
+        {"n": "3", "m": 2, "u": 1, "topic": "Basic operational concepts", "type": "theory", "text": "What is instruction register?", "g": "instruction_register"},
+        {"n": "4", "m": 2, "u": 1, "topic": "Basic operational concepts", "type": "theory", "text": "Give the CPU performance equation.", "g": "cpu_performance_equation"},
+        {"n": "5", "m": 2, "u": 4, "topic": "Semiconductor memory (static and dynamic)", "type": "theory", "text": "What is RAM? What is its significance?", "g": "ram"},
+        {"n": "6", "m": 2, "u": 2, "topic": "Basic concepts of pipelining", "type": "theory", "text": "What is pipelining?", "g": "pipelining_short"},
+        {"n": "7", "m": 2, "u": 4, "topic": "Cache memory mapping methods", "type": "theory", "text": "How is cache memory used to reduce the execution time?", "g": "cache_purpose"},
+        {"n": "8", "m": 2, "u": 4, "topic": "Secondary memories (optical, magnetic tape, magnetic disks, controllers)", "type": "theory", "text": "Write short notes on: (a) Define hit ratio. (b) Optical drives.", "parts": [{"l": "a", "m": 1}, {"l": "b", "m": 1}], "g": "hit_ratio_optical"},
+        {"n": "9", "m": 2, "u": 5, "topic": "Data transfer techniques", "type": "theory", "text": "What are data transfer techniques?", "g": "data_transfer_techniques"},
+        {"n": "10", "m": 2, "u": 5, "topic": "Direct memory access", "type": "theory", "text": "Define DMA.", "g": "dma_short"},
+        {"n": "11a", "m": 16, "u": 1, "topic": "Addressing modes", "type": "theory", "text": "Define addressing mode and explain the different types of basic addressing modes with an example.", "split": [10, 6], "g": "addressing_modes"},
+        {"n": "11b", "m": 16, "u": 1, "topic": "Basic operational concepts", "type": "theory", "text": "State the CPU performance equation and the factors that affect performance.", "g": "cpu_performance_equation"},
+        {"n": "12a", "m": 16, "u": 2, "topic": "Fixed point arithmetic", "type": "numerical", "text": "Multiply the following pair of signed 2's complement numbers: A = 010111, B = 101100.", "g": "signed_multiplication"},
+        {"n": "12b", "m": 16, "u": 2, "topic": "Basic concepts of pipelining", "type": "theory", "text": "Explain how the instruction pipeline works. What are the various situations where an instruction pipeline can stall? Illustrate with an example.", "split": [8, 8], "g": "pipeline_hazards"},
+        {"n": "13a", "m": 16, "u": 3, "topic": "Control transfer", "type": "theory", "text": "Define control transfer in CPU.", "g": "control_transfer"},
+        {"n": "13b", "m": 16, "u": 3, "topic": "Fetch cycle", "type": "theory", "text": "Explain the basic concepts of fetching cycle and compare it with sequence processing with a neat diagram.", "split": [8, 8], "g": "fetch_cycle"},
+        {"n": "14a", "m": 16, "u": 4, "topic": "Cache memory mapping methods", "type": "numerical", "text": "A block-set associative cache consists of 128 blocks divided into four-block sets. Main memory has 16,384 blocks of 256 eight-bit words each. (1) How many bits address main memory? (2) How many bits for TAG, SET and WORD?", "split": [8, 8], "g": "cache_address_bits"},
+        {"n": "14b", "m": 16, "u": 4, "topic": "Cache memory mapping methods", "type": "theory", "text": "Explain the various mapping techniques associated with cache memories.", "split": [8, 8], "g": "cache_mapping"},
+        {"n": "15a", "m": 16, "u": 5, "topic": "Direct memory access", "type": "theory", "text": "Explain with a block diagram the DMA transfer in a computer system.", "split": [10, 6], "g": "dma_long"},
+        {"n": "15b", "m": 16, "u": 5, "topic": "I/O devices", "type": "theory", "text": "Describe in detail input and output organization.", "g": "io_organization"}
+      ]
+    },
+    {
+      "id": "ES-2024-11", "exam": "END_SEM", "year": 2024, "month": 11, "code": "23CSPE2007/21CS2007", "duration_min": 180, "max_marks": 100,
+      "format": {"sections": [{"name": "A", "count": 10, "marks": 2, "choice": "none"}, {"name": "B", "count": 5, "marks": 16, "choice": "internal_or"}]},
+      "known_gaps": ["Q14(a) is not visible in the scan (page cut off)"],
+      "questions": [
+        {"n": "1", "m": 2, "u": 1, "topic": "Functional units", "type": "theory", "text": "Differentiate between Computer Architecture and Organization.", "g": "arch_vs_org"},
+        {"n": "2", "m": 2, "u": 1, "topic": "Basic operational concepts", "type": "theory", "text": "What is instruction register?", "g": "instruction_register"},
+        {"n": "3", "m": 2, "u": 2, "topic": "Basic concepts of pipelining", "type": "numerical", "text": "A pipeline consists of 4 stages with a clock cycle time of 5 ns. Calculate the time required to execute 10 instructions.", "g": "pipeline_time"},
+        {"n": "4", "m": 2, "u": 2, "topic": "Arithmetic logic unit", "type": "theory", "text": "What is ALU?", "g": "alu"},
+        {"n": "5", "m": 2, "u": 3, "topic": "Hardwired control", "type": "theory", "text": "What are the differences between hardwired and micro-programmed control units?", "g": "hardwired_vs_micro"},
+        {"n": "6", "m": 2, "u": 3, "topic": "Fetch cycle", "type": "theory", "text": "Draw the flow of instruction cycle.", "g": "instruction_cycle"},
+        {"n": "7", "m": 2, "u": 4, "topic": "Semiconductor memory (static and dynamic)", "type": "theory", "text": "Draw the basic structure of memory hierarchy.", "g": "memory_hierarchy"},
+        {"n": "8", "m": 2, "u": 4, "topic": "Associative memory", "type": "numerical", "text": "An associative memory has 64 words and each word has 16 bits. Calculate the total memory capacity in bytes.", "g": "associative_capacity"},
+        {"n": "9", "m": 2, "u": 5, "topic": "Direct memory access", "type": "numerical", "text": "A DMA system transfers 512 bytes from an I/O device to memory. If the bus transfer rate is 4 MB/s, calculate the time required.", "g": "dma_time"},
+        {"n": "10", "m": 2, "u": 5, "topic": "Data transfer techniques", "type": "theory", "text": "Differentiate between synchronous and asynchronous data transfer techniques.", "g": "data_transfer_techniques"},
+        {"n": "11a", "m": 16, "u": 1, "topic": "Addressing modes", "type": "theory", "text": "Define addressing mode and explain the different types of basic addressing modes with an example.", "split": [10, 6], "g": "addressing_modes"},
+        {"n": "11b", "m": 16, "u": 1, "topic": "Bus structures", "type": "mixed", "text": "Explain memory hierarchy in brief. A word-addressable computer has 1 GB of memory and a 64-bit word. Assuming 80 control lines and 40 interrupt lines, how large is the system bus?", "split": [8, 8], "g": "system_bus_size", "note": "first half is Unit 4 (memory hierarchy)"},
+        {"n": "12a", "m": 16, "u": 1, "topic": "RISC versus CISC", "type": "theory", "text": "(i) Tabulate the difference between RISC and CISC. (ii) State rules for floating point addition.", "parts": [{"l": "i", "m": 8, "u": 1, "g": "risc_vs_cisc"}, {"l": "ii", "m": 8, "u": 2, "g": "floating_point_rules"}], "g": "risc_vs_cisc"},
+        {"n": "12b", "m": 16, "u": 2, "topic": "Basic concepts of pipelining", "type": "theory", "text": "Explain the basic concepts of pipelining and compare it with serial processing with a neat diagram.", "split": [10, 6], "g": "pipelining_basics"},
+        {"n": "13a", "m": 16, "u": 3, "topic": "Micro-programmed control", "type": "mixed", "text": "Explain the concept of hardwired control unit. A micro-programmed control unit has 2 KB control memory, 20-bit microinstructions, 1 µs per microinstruction; a program needs 50 microinstructions. Find capacity, time, control memory size in bytes, and speedup if hardwired takes 30 µs.", "split": [8, 2, 2, 2, 2], "g": "hardwired_vs_micro"},
+        {"n": "13b", "m": 16, "u": 3, "topic": "Instruction interpretation and execution", "type": "theory", "text": "Explain the steps involved in instruction interpretation and execution with a simple instruction like ADD R1, R2.", "g": "instruction_execution"},
+        {"n": "14b", "m": 16, "u": 4, "topic": "Cache memory mapping methods", "type": "mixed", "text": "Explain the concept of cache memory. A four-block cache (initially empty) gets block references 4,5,7,12,4,5,13,4,5,7. Find hit ratio using FIFO, LRU, direct mapped, and two-way set associative with LRU.", "split": [8, 2, 2, 2, 2], "g": "cache_hit_ratio"},
+        {"n": "15a", "m": 16, "u": 5, "topic": "Bus interface", "type": "theory", "text": "What is a bus interface? Discuss its role in coordinating communication between CPU, memory and I/O devices. Differentiate between I/O channels and I/O processors.", "split": [8, 8], "g": "bus_interface_io_channels"},
+        {"n": "15b", "m": 16, "u": 5, "topic": "Direct memory access", "type": "mixed", "text": "What is DMA? Explain DMA operation with a suitable figure. A 1 MBPS I/O device on a 32-bit processor in cycle-stealing DMA transfers 8 words in 1 µs. What percentage of time is the CPU blocked?", "split": [8, 8], "g": "dma_long"}
+      ]
+    },
+    {
+      "id": "MST1-2023-10-OLD", "exam": "MST1", "year": 2023, "month": 10, "code": "21CS2007", "duration_min": 90, "max_marks": 50,
+      "format": {"sections": [{"name": "A", "count": 10, "marks": 2, "choice": "none"}, {"name": "B", "count": 4, "marks": 10, "choice": "any", "answer": 3}]},
+      "note": "Old scheme (4th semester). Some questions fall outside today's Units 1-2.",
+      "questions": [
+        {"n": "1", "m": 2, "u": 5, "topic": "I/O devices", "type": "theory", "text": "How does the CPU communicate with I/O devices?", "g": "io_communication", "unit_confidence": "low"},
+        {"n": "2", "m": 2, "u": 1, "topic": "Basic operational concepts", "type": "theory", "text": "Write the full form of ASCII.", "g": "ascii", "unit_confidence": "low"},
+        {"n": "3", "m": 2, "u": 1, "topic": "Functional units", "type": "theory", "text": "Write the concept of Von Neumann architecture.", "g": "von_neumann"},
+        {"n": "4", "m": 2, "u": 1, "topic": "Memory operations", "type": "theory", "text": "Name the two signals generated by the memory.", "g": "memory_signals"},
+        {"n": "5", "m": 2, "u": 1, "topic": "Basic operational concepts", "type": "theory", "text": "What are an accumulator and a program counter?", "g": "accumulator_pc"},
+        {"n": "6", "m": 2, "u": 1, "topic": "Memory instruction and instruction sequencing", "type": "mcq", "text": "A CPU has 32-bit instructions and a program starts at 200. What is a legal value of the program counter (byte-addressable memory)? (a) 226 (b) 242 (c) 246 (d) 252", "g": "legal_pc_value"},
+        {"n": "7", "m": 2, "u": 1, "topic": "RISC versus CISC", "type": "theory", "text": "Differentiate between RISC and CISC.", "g": "risc_vs_cisc"},
+        {"n": "8", "m": 2, "u": 1, "topic": "Design of a computer system", "type": "theory", "text": "Design a computer system with block diagram.", "g": "functional_units"},
+        {"n": "9", "m": 2, "u": 2, "topic": "Floating point arithmetic", "type": "theory", "text": "What do you mean by single precision and double precision? Draw the instruction format for both.", "g": "ieee754"},
+        {"n": "10", "m": 2, "u": 2, "topic": "Floating point arithmetic", "type": "numerical", "text": "Write down the value formation for 32-bit IEEE 754 standard for the number 01000001111000----0000.", "g": "ieee754"},
+        {"n": "B1", "m": 10, "u": 1, "topic": "Addressing modes", "type": "mixed", "text": "Explain in detail the concept of addressing mode. An instruction is stored at location 300 with address field at 301 holding 250; a processor register holds 200. Evaluate the effective address for 5 kinds of addressing.", "g": "addressing_modes"},
+        {"n": "B2", "m": 10, "u": 2, "topic": "Basic concepts of pipelining", "type": "theory", "text": "Explain the basic concept of pipelining.", "g": "pipelining_basics"},
+        {"n": "B3", "m": 10, "u": 1, "topic": "Memory instruction and instruction sequencing", "type": "mixed", "text": "What are the types of address instructions? Perform X = (A-B)/(C*D) for any two formats.", "g": "address_instruction_types"},
+        {"n": "B4", "m": 10, "u": 1, "topic": "Memory instruction and instruction sequencing", "type": "theory", "text": "Explain memory instruction and instruction sequence.", "g": "instruction_sequencing"}
+      ]
+    },
+    {
+      "id": "MST1-NEW", "exam": "MST1", "year": null, "year_hint_from_filename": 2023, "code": "23CSPE2007", "duration_min": 90, "max_marks": 50,
+      "format": {"sections": [{"name": "A", "count": 10, "marks": 2, "choice": "none"}, {"name": "B", "count": 4, "marks": 10, "choice": "any", "answer": 3}]},
+      "questions": [
+        {"n": "1", "m": 2, "u": 1, "topic": "RISC versus CISC", "type": "theory", "text": "What is the full form of RISC? Explain it briefly.", "g": "risc_vs_cisc"},
+        {"n": "2", "m": 2, "u": 1, "topic": "Bus structures", "type": "theory", "text": "What is a bus? What are the different types of buses? Explain in one line.", "g": "bus_types"},
+        {"n": "3", "m": 2, "u": 1, "topic": "Evolution of computer systems", "type": "theory", "text": "What are the different computer generations? Explain each in one line.", "g": "computer_generations"},
+        {"n": "4", "m": 2, "u": 1, "topic": "Memory instruction and instruction sequencing", "type": "theory", "text": "What is an instruction? Draw the instruction format.", "g": "instruction_format"},
+        {"n": "5", "m": 2, "u": 1, "topic": "Computer types", "type": "theory", "text": "What are the different types of computers based on size, power and functionality? Explain each in one line.", "g": "computer_types"},
+        {"n": "6", "m": 2, "u": 2, "topic": "Fixed point arithmetic", "type": "numerical", "text": "Convert decimal 153 to binary and give its 1's and 2's complement.", "g": "number_conversion"},
+        {"n": "7", "m": 2, "u": 1, "topic": "Functional units", "type": "theory", "text": "Draw Von Neumann architecture.", "g": "von_neumann"},
+        {"n": "8", "m": 2, "u": 1, "topic": "Functional units", "type": "theory", "text": "What are the different functional units of a computer system? Explain each in one line.", "g": "functional_units"},
+        {"n": "9", "m": 2, "u": 1, "topic": "Bus structures", "type": "theory", "text": "Which combinational hardware device is used when data is transferred from a register to the common bus? Explain why and its basic function.", "g": "bus_multiplexer"},
+        {"n": "10", "m": 2, "u": 2, "topic": "Fixed point arithmetic", "type": "numerical", "text": "Convert binary 110110101 to decimal.", "g": "number_conversion"},
+        {"n": "B1", "m": 10, "u": 2, "topic": "Arithmetic logic unit", "type": "theory", "text": "Draw the accumulator-based processor architecture and explain its components in detail.", "g": "accumulator_architecture"},
+        {"n": "B2", "m": 10, "u": 2, "topic": "Fixed point arithmetic", "type": "numerical", "text": "Perform arithmetic operations on integers: 15+10, 111+22, 10-8, 10*11, 16/2.", "g": "integer_arithmetic"},
+        {"n": "B3", "m": 10, "u": 1, "topic": "Location and addresses", "type": "numerical", "text": "(A) With 32-bit addresses, how many locations are possible with 16-bit addressing? Size of memory in GB. (B) Represent 1.25 in IEEE single-precision (32-bit) format.", "parts": [{"l": "A", "u": 1, "g": "address_space"}, {"l": "B", "u": 2, "g": "ieee754"}], "g": "address_space"},
+        {"n": "B4", "m": 10, "u": 1, "topic": "Addressing modes", "type": "theory", "text": "What are the different addressing modes? Explain each briefly with a memory-mapping diagram and examples.", "g": "addressing_modes"}
+      ]
+    },
+    {
+      "id": "MST2-NEW", "exam": "MST2", "year": null, "year_hint_from_filename": 2023, "code": "23CSPE2007", "duration_min": 60, "max_marks": 30,
+      "format": {"sections": [{"name": "A", "count": 5, "marks": 1, "choice": "none"}, {"name": "B", "count": 6, "marks": 5, "choice": "any", "answer": 5}]},
+      "uncertain": ["duration and max marks are cut off in the photo (assumed 1 h / 30)", "Part B heading says (3*5) but the note says answer any five"],
+      "questions": [
+        {"n": "1", "m": 1, "u": 4, "topic": "Cache memory mapping methods", "type": "numerical", "text": "A fully associative cache of 16 KB with 256-byte blocks; main memory 128 KB. Find the number of bits in tag.", "g": "cache_address_bits"},
+        {"n": "2", "m": 1, "u": 3, "topic": "Micro-programmed control", "type": "numerical", "text": "A control unit can generate up to 30 control signals but at most 3 are active at a time. Minimum bits needed in vertical micro-programmed control?", "g": "control_word_size"},
+        {"n": "3", "m": 1, "u": 4, "topic": "Secondary memories (optical, magnetic tape, magnetic disks, controllers)", "type": "mcq", "text": "The dots on the magnetic tape represent: (a) binary digits (b) decimal digits (c) hex digits (d) octal digits", "g": "magnetic_tape"},
+        {"n": "4", "m": 1, "u": 3, "topic": "Hardwired control", "type": "mcq", "text": "Select all components involved in the control unit: (a) micro-programmed control (b) hardwired control (c) pipelining (d) ALU", "g": "control_unit_components"},
+        {"n": "5", "m": 1, "u": 4, "topic": "Associative memory", "type": "match", "text": "Match memory types (associative, cache, virtual, secondary) with characteristics (non-volatile, speeds access, content-addressed, extends main memory).", "g": "memory_types_match"},
+        {"n": "B1", "m": 5, "u": 3, "topic": "Hardwired control", "type": "theory", "text": "Differentiate between hardwired and micro-programmed control unit.", "g": "hardwired_vs_micro"},
+        {"n": "B2", "m": 5, "u": 4, "topic": "Virtual memory", "type": "numerical", "text": "4 page frames, initially empty; reference string 4,7,6,1,7,6,1,2,7,2. Total page faults with (a) LRU (b) FIFO.", "g": "page_replacement"},
+        {"n": "B3", "m": 5, "u": 3, "topic": "Fetch cycle", "type": "theory", "text": "Define and outline the steps in fetch cycle.", "g": "fetch_cycle"},
+        {"n": "B4", "m": 5, "u": 4, "topic": "Cache memory mapping methods", "type": "theory", "text": "What is the purpose of cache memory, and how does it differ from main memory?", "g": "cache_purpose"},
+        {"n": "B5", "m": 5, "u": 3, "topic": "Micro-programmed control", "type": "numerical", "text": "125 control signals in 5 mutually exclusive groups (20, 70, 2, 10, 23). Control word size for horizontal and vertical microprogramming, and bits saved.", "g": "control_word_size"},
+        {"n": "B6", "m": 5, "u": 4, "topic": "Cache memory mapping methods", "type": "numerical", "text": "256 KB 4-way set-associative cache, 32-byte blocks, 32-bit physical address. Find tag bits, showing each step.", "g": "cache_address_bits"}
+      ]
+    }
+  ],
+  "expected_repeats_across_papers": {
+    "addressing_modes": ["ES-2023-11/11a", "ES-2024-11/11a", "MST1-2023-10-OLD/B1", "MST1-NEW/B4"],
+    "risc_vs_cisc": ["ES-2024-11/12a(i)", "MST1-2023-10-OLD/7", "MST1-NEW/1"],
+    "functional_units": ["ES-2023-11/1", "MST1-2023-10-OLD/8", "MST1-NEW/8"],
+    "cache_address_bits": ["ES-2023-11/14a", "MST2-NEW/1", "MST2-NEW/B6"],
+    "ieee754": ["MST1-2023-10-OLD/9", "MST1-2023-10-OLD/10", "MST1-NEW/B3(B)"],
+    "hardwired_vs_micro": ["ES-2024-11/5", "ES-2024-11/13a", "MST2-NEW/B1"],
+    "fetch_cycle": ["ES-2023-11/13b", "MST2-NEW/B3"],
+    "instruction_register": ["ES-2023-11/3", "ES-2024-11/2"],
+    "bus_types": ["ES-2023-11/2", "MST1-NEW/2"],
+    "von_neumann": ["MST1-2023-10-OLD/3", "MST1-NEW/7"],
+    "pipelining_basics": ["ES-2024-11/12b", "MST1-2023-10-OLD/B2"],
+    "data_transfer_techniques": ["ES-2023-11/9", "ES-2024-11/10"],
+    "dma_long": ["ES-2023-11/15a", "ES-2024-11/15b"],
+    "cache_purpose": ["ES-2023-11/7", "MST2-NEW/B4"],
+    "control_word_size": ["MST2-NEW/2", "MST2-NEW/B5"]
+  },
+  "never_asked_topics_in_these_papers": [
+    "Unit 4: Fetch and write mechanisms",
+    "Unit 5: I/O channel / I/O processor appear only once (ES-2024 15a)"
+  ]
+}
